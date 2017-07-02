@@ -50,3 +50,5 @@ The script `run_analysis.R` does the following:
    1.	remove "." from the end of names
 1. creates a second, independent tidy data set with the average of each variable for each activity and each subject (from the data in step 7) using group_by (subject and activity) and summarise_all with funs(mean) to calculate the average
 1. write.csv the
+
+in order to read the data to R use: read.table("tidyData.txt", stringsAsFactors = FALSE, header = TRUE)
