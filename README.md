@@ -28,25 +28,25 @@ The original relevant data was stored in 6 separate text files
 
 The script `run_analysis.R` does the following:
 
-1.	Load the libraries plyr & tidyverse
-2.	Check if the data exists in the working directory and download (and unzip) the data if it does not exists
-3.	Read the relevant data in to R
-4.	Merges the training and the test sets to create one data set using cbind and rbind.
-a.	Merges the test data using cbind(subject_test, test_labels,test_set)
-b.	Merges the training data cbind(subject_train, train_labels,train_set)
-c.	Merges the training and the test sets using rbind(train_data_Merge,test_data_Merge)
-5.	Extracts only the measurements on the mean and standard deviation for each measurement using regular expression to index the feature vector and then using that vector to subset the merged data
-6.	Uses descriptive activity names to name the activities in the data set using plyr join to match the activities name to the data
-7.	Appropriately labels the data set with descriptive variable names – using gsub and regular expression to make descriptive names with "." as separator between words:
-a.	replace prefix 't' to time
-b.	replace prefix 'f' to frequency
-c.	replace "()" and "-" with ""
-d.	replace mean to Mean
-e.	replace std to Str
-f.	replace Acc to Accelerometer
-g.	replace Gyro to Gyroscope
-h.	replace Mag to Magnitude
-i.	replace 2 "." in sequence
-j.	remove "." from the end of names
-8.	creates a second, independent tidy data set with the average of each variable for each activity and each subject (from the data in step 7) using group_by (subject and activity) and summarise_all with funs(mean) to calculate the average
-9.	write.csv the
+1. Load the libraries plyr & tidyverse
+1. Check if the data exists in the working directory and download (and unzip) the data if it does not exists
+1. Read the relevant data in to R
+1. Merges the training and the test sets to create one data set using cbind and rbind. 
+   1. Merges the test data using cbind(subject_test, test_labels,test_set)
+   1.	Merges the training data cbind(subject_train, train_labels,train_set)
+   1.	Merges the training and the test sets using rbind(train_data_Merge,test_data_Merge)
+1. Extracts only the measurements on the mean and standard deviation for each measurement using regular expression to index the feature vector and then using that vector to subset the merged data
+1. Uses descriptive activity names to name the activities in the data set using plyr join to match the activities name to the data
+1. Appropriately labels the data set with descriptive variable names – using gsub and regular expression to make descriptive names with "." as separator between words:
+   1. replace prefix 't' to time
+   1.	replace prefix 'f' to frequency
+   1.	replace "()" and "-" with ""
+   1.	replace mean to Mean
+   1.	replace std to Str
+   1.	replace Acc to Accelerometer
+   1.	replace Gyro to Gyroscope
+   1.	replace Mag to Magnitude
+   1.	replace 2 "." in sequence
+   1.	remove "." from the end of names
+1. creates a second, independent tidy data set with the average of each variable for each activity and each subject (from the data in step 7) using group_by (subject and activity) and summarise_all with funs(mean) to calculate the average
+1. write.csv the
